@@ -80,7 +80,7 @@ function terrain(width, height, displace, roughness){
     return points;
 ```
 
-<iframe style="width: 540px; height: 300px;" src="http://jsfiddle.net/loktar/5Xdzg/embedded/result,js,html,css/" height="240" width="320" frameborder="0"></iframe>
+<iframe style="width: 540px; height: 300px;" src="https://jsfiddle.net/loktar/5Xdzg/embedded/result,js,html,css/" height="240" width="320" frameborder="0"></iframe>
 
 In my code I also use a value called displace. This is just to control the maximum distance a point can go this is so II can keep it inside of the canvas area.
 
@@ -90,6 +90,6 @@ Using this algorithm makes it easy to create wrapping terrain, in order to do so
 
 There are a few ways to create scrolling terrain. In my codepen for example I cheat and just pop and push the points on the array itself which makes the wrapped terrain scroll. However a better approach in my opinion is to use two sets of values and just move them based on an offset. Once the second half reaches the edge of the screen reset the offset to 0 copy the second array to the first, and generate new terrain for the second array, passing in the seed. Below is a fiddle of how I personally achieve the effect.
 
-<iframe style="width: 540px; height: 300px;" src="http://jsfiddle.net/loktar/XDpd3/embedded/result,js,html,css/" height="240" width="320" frameborder="0"></iframe>
+<iframe style="width: 540px; height: 300px;" src="https://jsfiddle.net/loktar/XDpd3/embedded/result,js,html,css/" height="240" width="320" frameborder="0"></iframe>
 
 Well that was a lot of information. Would you believe there is an even simpler method to creating 2d terrain than that? I'll go over that in my next article.
