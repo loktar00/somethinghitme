@@ -42,18 +42,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </footer>
       </article>
 
-      <nav>
+      <nav className='nav'>
         <ul>
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link className='link-button' to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link className='link-button' to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}

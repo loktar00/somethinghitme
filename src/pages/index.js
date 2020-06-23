@@ -34,7 +34,7 @@ const BlogIndex = ({ data, location }) => {
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
-              <Link className='read-more' to={node.fields.slug}>
+              <Link className='link-button' to={node.fields.slug}>
                   Read More
               </Link>
             </section>

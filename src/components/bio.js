@@ -14,7 +14,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 100, height: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -32,7 +32,7 @@ const Bio = () => {
 
   const { author } = data.site.siteMetadata
   return (
-    <div>
+    <div className='bio'>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name} />

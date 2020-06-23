@@ -3,9 +3,11 @@
     margin: 0 auto;
 }
 
+
 .main {
     display: flex;
 }
+
 
 .primary {
     flex-basis: 70%;
@@ -13,7 +15,7 @@
 }
 
 
-.read-more {
+.link-button {
     padding: 10px;
     background: $highlight-color-1;
     color: #fff;
@@ -31,26 +33,27 @@
     }
 
     &:nth-child(3n+1) {
-        .read-more {
+        .link-button {
             background: $highlight-color-1;
         }
         border-left: 8px solid $highlight-color-1;
     }
 
     &:nth-child(3n+2) {
-        .read-more {
+        .link-button {
             background: $highlight-color-2;
         }
         border-left: 8px solid $highlight-color-2;
     }
 
     &:nth-child(3n+3) {
-        .read-more {
+        .link-button {
             background: $highlight-color-3;
         }
         border-left: 8px solid $highlight-color-3;
     }
 }
+
 
 .aside-list {
     margin: 2.5rem 0;
@@ -67,5 +70,23 @@
 
     &:first-child {
         margin-top: 0;
+    }
+}
+
+.bio {
+    display: flex;
+    align-items: center;
+
+    p {
+        margin-left: 1rem;
+    }
+}
+
+.nav {
+    ul {
+        display: flex;
+        padding: 0;
+        list-style: none;
+        justify-content: space-between;
     }
 }
