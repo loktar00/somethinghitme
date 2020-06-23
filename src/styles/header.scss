@@ -1,0 +1,27 @@
+.header {
+    margin-bottom: 5rem;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+    margin: 0;
+}
+
+h1 {
+    font-size: 6.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+.primary {
+    h2 {
+        margin: 2.5rem 0 1.5rem;
+    }
+}

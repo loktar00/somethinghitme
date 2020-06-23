@@ -1,34 +1,32 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+
+import "../styles/styles.scss";
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const siteTitle = data.site.siteMetadata.title;
+  const siteDescription = data.site.siteMetadata.description;
+  const posts = data.allMarkdownRemark.edges;
+  const social = data.site.siteMetadata.social;
+  const projects = data.site.siteMetadata.projects;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} description={siteDescription} social={social} projects={projects}>
       <SEO title="All posts" />
-      <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug}>
+          <article key={node.fields.slug} className='article'>
             <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <h3>
+                <Link to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small>Posted on <Link to={node.fields.slug}>{node.frontmatter.date}</Link></small>
             </header>
             <section>
               <p
@@ -36,6 +34,9 @@ const BlogIndex = ({ data, location }) => {
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
+              <Link className='read-more' to={node.fields.slug}>
+                  Read More
+              </Link>
             </section>
           </article>
         )
@@ -51,6 +52,15 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description,
+        social {
+          url,
+          title
+        },
+        projects {
+          url,
+          title
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -63,7 +73,6 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            description
           }
         }
       }

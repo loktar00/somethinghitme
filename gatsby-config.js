@@ -1,15 +1,49 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Somethinghitme`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Jason Brown`,
+      summary: `Father, Veteran, lover of everything tech.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `Code, demos and ideas.`,
+    siteUrl: `http://somethinghitme.com`,
+    social: [
+      {
+        url: `https://twitter.com/loktar00`, title: `@loktar00`
+      },
+      {
+        url: `http://codepen.io/loktar00`, title: `Codepen`
+      },
+      {
+        url: `https://github.com/loktar00`, title: `Github`
+      },
+      {
+        url: `https://stackoverflow.com/users/322395/loktar`, title: `Stackoverflow`
+      },
+      {
+        url: `https://www.dwitter.net/u/loktar`, title: `dwitter`
+      }
+    ],
+    projects: [
+      {
+        url: `https://github.com/loktar00/react-lazy-load`, title: `react-lazy-load`
+      },
+      {
+        url: `https://github.com/loktar00/jest`, title: `Jest Game Framework`
+      },
+      {
+        url: `https://codegolf.stackexchange.com/a/30335/3474`, title: `gui hacker`
+      },
+      {
+        url: `https://github.com/loktar00/JQuery-Snowfall`, title: `jQuery Snowfall`
+      },
+      {
+        url: `http://www.retroships.com`, title: `RetroShips`
+      },
+      {
+        url: `http://zombiegames.net`, title: `zombiegames.net`
+      }
+    ],
   },
   plugins: [
     {
@@ -36,15 +70,10 @@ module.exports = {
               maxWidth: 590,
             },
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-plugin-sass`
         ],
       },
     },
@@ -69,13 +98,8 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
