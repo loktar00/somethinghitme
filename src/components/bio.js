@@ -12,7 +12,7 @@ import Image from "gatsby-image"
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
         childImageSharp {
           fixed(width: 100, height: 100) {
             ...GatsbyImageSharpFixed
