@@ -49,6 +49,10 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: 'referrer',
+          content: 'origin'
         }
       ].concat(meta)}
     />
