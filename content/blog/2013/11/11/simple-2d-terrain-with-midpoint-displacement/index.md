@@ -44,10 +44,9 @@ As you can see the more iterations creates more realistic terrain. Lately it see
 
 From now on I’ll call this roughness. How much do you need to reduce it by each iteration? Well that all depends on how you want your end result to look. The greater the reduction the less jagged your hill’s will be. So if you want more of a rolling hill appearance you would to reduce the value at least by half every iteration, however if you want more jagged mountains you don’t want to reduce the value very much at all. Below is an example of terrain using two different values for roughness.
 
-\[caption id="attachment\_779" align="aligncenter" width="500"\][![point5](images/point5.png)](http://www.somethinghitme.com/wp-content/uploads/2013/11/point5.png) Created by using a value of 0.5\[/caption\]
+[![point5](images/point5.png)](http://www.somethinghitme.com/wp-content/uploads/2013/11/point5.png) Created by using a value of 0.5
 
-\[caption id="attachment\_780" align="aligncenter" width="500"\][![point7](images/point7.png)](http://www.somethinghitme.com/wp-content/uploads/2013/11/point7.png) Created by using a value of 0.7\[/caption\]
-
+[![point7](images/point7.png)](http://www.somethinghitme.com/wp-content/uploads/2013/11/point7.png) Created by using a value of 0.7
 The following JavaScript function is what I used to create the above examples.
 
 ```javascript

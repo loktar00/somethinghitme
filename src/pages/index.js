@@ -35,7 +35,7 @@ const BlogIndex = ({ data, location }) => {
                 }}
               />
               <Link className='link-button' to={node.fields.slug}>
-                  Read More
+                  Continue Reading
               </Link>
             </section>
           </article>
@@ -66,7 +66,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 500, format: HTML)
           fields {
             slug
           }
