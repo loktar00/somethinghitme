@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -15,6 +16,9 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle} description={siteDescription} social={social} projects={projects}>
+      <Helmet>
+          <script type='module' src='/paintdrip.js' />
+      </Helmet>
       <SEO title="Somethinghitme.com | Code, demos and ideas." />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug

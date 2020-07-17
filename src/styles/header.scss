@@ -9,6 +9,16 @@ h1, h2, h3 {
 
 h1 {
     font-size: 6.5rem;
+    text-shadow:
+       5px 5px 0 #000,
+     -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+       2px 2px 0 #000;
+
+    a {
+        color: #fff;
+    }
 }
 
 h2 {

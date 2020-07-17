@@ -1,5 +1,5 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 import AsideList from './asideList';
 
 const Layout = ({ location, title, description, social, projects, children }) => {
