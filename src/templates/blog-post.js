@@ -1,6 +1,7 @@
 import React, {useEffect} from "react"
 import Prism from "prismjs"
 import { Link, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -22,6 +23,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={siteTitle} description={description} social={social} projects={projects}>
+      <Helmet>
+        <script type='module' src='/paintdrip.js' />
+      </Helmet>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

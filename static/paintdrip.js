@@ -1,27 +1,28 @@
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
-const width = window.innerWidth;
-const height = window.innerHeight;
 const dots = [];
 
 canvas.classList.add('effect-canvas');
 
 document.body.append(canvas);
 
-canvas.width = width;
-canvas.height = height;
+canvas.width = window.innerWidth;
+canvas.height = 250;
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+});
 
 class dot {
-    constructor(xRange = 0, yRange = 0) {
-        this.xRange = xRange;
-        this.yRange = yRange;
+    constructor(canvas) {
+        this.canvas = canvas;
         this.create();
     }
 
     create = () => {
-        this.x = Math.random() * this.xRange;
+        this.x = Math.random() * this.canvas.width;
         this.size = 1 + Math.random() * 20;
-        this.y = -this.size;
+        this.y = -this.size * 2;
 
         this.color = {
             h: Math.floor(Math.random() * 360),
@@ -29,13 +30,13 @@ class dot {
             v: Math.floor(50 + Math.random() * 20)
         };
 
-        this.speed = 1 + Math.random();
+        this.speed = 0.1 + Math.random() * 0.5;
     }
 
     update = () => {
         this.y += this.speed;
 
-        if (this.y > this.yRange) {
+        if (this.y >  this.canvas.height) {
             this.create();
         }
     }
@@ -54,7 +55,7 @@ class dot {
 
 function init() {
   for (let i = 0; i < 100; i++) {
-    dots.push(new dot(canvas.width, canvas.height));
+    dots.push(new dot(canvas));
   }
 
   update();
